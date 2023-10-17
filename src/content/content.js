@@ -5,9 +5,9 @@ import "./content.css";
 export default function Content() {
   return (
     <div className="container">
-      <div className="sidebar-container">
-        <Sidebar />
-      </div>
+
+      <Sidebar />
+
       <div className="content">
         <Routing />
       </div>

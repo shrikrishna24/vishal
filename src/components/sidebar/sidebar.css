@@ -1,5 +1,8 @@
-.sidebar-content {
-  background-color: var(--primary);
+.sidebar-container{
+  width: 3%;
   padding: 25px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }

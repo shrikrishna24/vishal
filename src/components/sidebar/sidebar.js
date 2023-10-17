@@ -3,7 +3,7 @@ import "./sidebar.css";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar-content">
+    <div className="sidebar-container">
       <div className="sidebar-navlinks">
         <div>
           <img src={require("../../assets/sidebar/dashboard.png")} alt="" />
