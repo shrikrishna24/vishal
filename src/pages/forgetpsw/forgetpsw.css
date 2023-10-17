@@ -3,13 +3,13 @@
   src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 }
 
-.login-container {
+.forgetpsw-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.login-content {
+.forgetpsw-content {
   background-color: var(--secondary);
   width: 345px;
   height: 500px;
@@ -20,14 +20,22 @@
   border-radius: 10px;
 }
 
-.login-head h1 {
+.forgetpsw-head h1 {
   text-align: center;
   margin: 0 0 30px;
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.forgetpsw-head h4 {
+  text-align: center;
+  margin: 30px 0 50px 0;
   font-family: "Manrope", sans-serif;
 }
 
 /* FIELDS  */
-.login-fields {
+.forgetpsw-fields {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -35,7 +43,7 @@
 }
 
 /* INPUT  */
-.login-fields input {
+.forgetpsw-fields input {
   margin-top: 5px;
   padding-left: 10px;
   font-family: "Manrope", sans-serif;
@@ -47,19 +55,19 @@
   padding-left: 4px;
 }
 
-.login-fields label {
+.forgetpsw-fields label {
   padding-left: 5px;
   font-family: "Manrope", sans-serif;
 }
 
-.login-fields .bottom-label {
+.forgetpsw-fields .bottom-label {
   float: right;
   margin: 5px 0 0;
   font-size: 12px;
   font-family: "Manrope", sans-serif;
 }
 
-.login-fields .bottom-label:hover {
+.forgetpsw-fields .bottom-label:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -87,7 +95,7 @@
 
 /* footer  */
 
-.login-footer > div:nth-child(2) {
+.forgetpsw-footer > div:nth-child(2) {
   margin-top: 7px;
   display: flex;
   flex-direction: column;
@@ -95,7 +103,7 @@
   font-family: "Manrope", sans-serif;
 }
 
-.login-footer > div:nth-child(2) p {
+.forgetpsw-footer > div:nth-child(2) p {
   font-size: 10px;
   text-align: justify;
   margin-top: 2px 0;
@@ -103,11 +111,11 @@
   font-family: "Manrope", sans-serif;
 }
 
-.google-icon {
+.enter-icon {
   position: absolute;
   padding-left: 42px;
 }
 
-.login-fields a {
+.forgetpsw-fields a {
   text-decoration: none;
 }

@@ -1,0 +1,5 @@
+.sidebar-content {
+  background-color: var(--primary);
+  padding: 25px;
+  position: relative;
+}

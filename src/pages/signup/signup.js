@@ -1,17 +1,17 @@
 import React from "react";
-import "./login.css";
+import "./signup.css";
 import TextBox from "../../components/textfield/textField";
 import Button from "../../components/button/Button";
 
-export default function Login() {
+export default function Signup() {
   return (
-    <div className="login-container">
-      <div className="login-content">
-        <div className="login-head">
-          <h1>Login</h1>
+    <div className="signup-container">
+      <div className="signup-content">
+        <div className="signup-head">
+          <h1>Sign Up</h1>
         </div>
 
-        <form className="login-fields">
+        <form className="signup-fields">
           <div>
             <img
               className="input-icons"
@@ -21,9 +21,17 @@ export default function Login() {
             <label>
               Email ID
               <TextBox type={"email"} placeholder="Enter your Email ID here" />
-              <p className="bottom-label">
-                <a href="/signup">Don't have account register now?</a>
-              </p>
+            </label>
+          </div>
+          <div>
+            <img
+              className="input-icons"
+              src={require("../../assets/user.png")}
+              alt=""
+            />
+            <label>
+              Username
+              <TextBox type={"text"} placeholder="Enter your Username here" />
             </label>
           </div>
           <div>
@@ -38,15 +46,16 @@ export default function Login() {
                 type={"password"}
                 placeholder="Enter your password here"
               />
-              <p className="bottom-label">
-                <a href="/forgetpsw">Forget Password?</a>
-              </p>
             </label>
           </div>
 
-          <Button btype="primary" bTitle="Login">
-            <span>Login</span>
+          <Button btype="primary" bTitle="signup">
+            <span>Sign Up</span>
           </Button>
+
+          <div className="alreadylogin">
+            Have an Account?<a href="/login">Log In</a>
+          </div>
 
           <div className="seprator">
             <div></div>
@@ -54,18 +63,18 @@ export default function Login() {
             <div></div>
           </div>
 
-          <div className="login-footer">
-            <Button btype="btn-secondary" bTitle="Login with Google">
+          <div className="signup-footer">
+            <Button btype="btn-secondary" bTitle="signup with Google">
               <div className="google-icon">
                 <img src={require("../../assets/google.png")} alt="" />
               </div>
-              <span>Login with Google</span>
+              <span>Signup with Google</span>
             </Button>
             <div>
               <p>
-                By clicking “Login with Google/Email/SAML” above you acknowledge
-                that you have read and understood and agree to WebPrint's Terms
-                & Conditions & Privacy Policy
+                By clicking “signup with Google/Email/SAML” above you
+                acknowledge that you have read and understood and agree to
+                WebPrint's Terms & Conditions & Privacy Policy
               </p>
             </div>
           </div>

@@ -3,13 +3,13 @@
   src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 }
 
-.login-container {
+.signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.login-content {
+.signup-content {
   background-color: var(--secondary);
   width: 345px;
   height: 500px;
@@ -20,22 +20,22 @@
   border-radius: 10px;
 }
 
-.login-head h1 {
+.signup-head h1 {
   text-align: center;
   margin: 0 0 30px;
   font-family: "Manrope", sans-serif;
 }
 
 /* FIELDS  */
-.login-fields {
+.signup-fields {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 11px;
   font-family: "Manrope", sans-serif;
 }
 
 /* INPUT  */
-.login-fields input {
+.signup-fields input {
   margin-top: 5px;
   padding-left: 10px;
   font-family: "Manrope", sans-serif;
@@ -47,21 +47,30 @@
   padding-left: 4px;
 }
 
-.login-fields label {
+.signup-fields label {
   padding-left: 5px;
   font-family: "Manrope", sans-serif;
 }
 
-.login-fields .bottom-label {
+.signup-fields .bottom-label {
   float: right;
   margin: 5px 0 0;
   font-size: 12px;
   font-family: "Manrope", sans-serif;
 }
 
-.login-fields .bottom-label:hover {
+.signup-fields .bottom-label:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* Already Login */
+.alreadylogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.5px;
 }
 
 /* seprator */
@@ -87,7 +96,7 @@
 
 /* footer  */
 
-.login-footer > div:nth-child(2) {
+.signup-footer > div:nth-child(2) {
   margin-top: 7px;
   display: flex;
   flex-direction: column;
@@ -95,7 +104,7 @@
   font-family: "Manrope", sans-serif;
 }
 
-.login-footer > div:nth-child(2) p {
+.signup-footer > div:nth-child(2) p {
   font-size: 10px;
   text-align: justify;
   margin-top: 2px 0;
@@ -106,8 +115,4 @@
 .google-icon {
   position: absolute;
   padding-left: 42px;
-}
-
-.login-fields a {
-  text-decoration: none;
 }
