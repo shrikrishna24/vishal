@@ -1,41 +1,81 @@
 .home-container {
- width: 100%;
-height: 100vh;
-}
-
-.home-content {
-  background-color: var(--white);
-  border-radius: 40px 0px 0px 40px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
   padding: 30px;
+  gap: 30px;
 }
 
-.box {
-  background-color: #f0ebff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 12px;
+/* LEFT SECTION  */
+.home-left {
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
+
+/* RIGHT SECTION  */
+.home-right {
+  flex: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+
+/* LEFT SECTION  */
+/* search  */
+
 
 .box span {
   padding-left: 7px;
 }
 
-.welcome {
-  padding-left: 25px;
+/* home heading  */
+.home-heading>h3{
+  margin: 0;
   font-size: 22px;
-  text-align: left;
 }
 
-.boxes {
+/* datacard(boxes)  */
+.data-card {
   display: flex;
-  gap: 60px;
-  padding-left: 20px;
+  gap: 30px;
 }
 
-.newbox {
-  background-color: #f0ebff;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  width: 305px;
-  height: 97px;
+.data-card>div{
+  width: 100%;
+}
+
+
+/* table  */
+.job-heading{
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/* RIGHT SECTION  */
+
+.home-right>.card-primary:nth-child(1) {
+  width: 86px;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.home-right > .card-primary:nth-last-child(-n+2) {
+  width: auto; 
+  height: auto;
+  flex: 1
+}
+
+.profile-section{
+  width: 100%;
+  background-color: var(--secondary);
 }

@@ -1,5 +1,7 @@
 :root{
     --primary: #36179a;
     --secondary: #f0ebff;
+    --hover:#37169a;
+    --hover-content:#21b5dc;
     --white: #ffff;
 }

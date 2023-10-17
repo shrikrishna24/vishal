@@ -10,6 +10,7 @@ export default function Routing() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/resetpsw" element={<Resetpsw />} />
       <Route path="/forgetpsw" element={<Forgetpsw />} />
