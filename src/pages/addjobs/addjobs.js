@@ -1,12 +1,14 @@
 import React from "react";
-import "./home.css";
+import "./addjobs.css";
 import Card from "../../components/card/card";
 import TextField from "../../components/textfield/textField";
+import Button from "../../components/button/Button";
+import TextBox from "../../components/textfield/textField";
 
-export default function Home() {
+export default function Addjobs() {
   return (
-    <div className="home-container">
-      <div className="home-left">
+    <div className="addjobs-container">
+      <div className="addjobs-left">
         <div className="search-bar">
           <img
             src={require("../../assets/search.png")}
@@ -16,31 +18,7 @@ export default function Home() {
           />
           <TextField name="Search" placeholder="Search" type="text" />
         </div>
-        <div className="home-heading">
-          <h3>Hey John, Welcome to Webprint</h3>
-        </div>
 
-        <div className="data-card">
-          <Card ctype="card-primary"></Card>
-          <Card ctype="card-primary"></Card>
-          <Card ctype="card-primary"></Card>
-        </div>
-
-        <Card ctype="card-primary ">
-          <div>
-            <h4>October,2023</h4>
-          </div>
-          <div className="date-box">
-            <Card ctype="card-secondary"></Card>
-            <Card ctype="card-secondary"></Card>
-            <Card ctype="card-secondary"></Card>
-            <Card ctype="card-secondary"></Card>
-            <Card ctype="card-secondary"></Card>
-            <Card ctype="card-secondary"></Card>
-            <Card ctype="card-secondary"></Card>
-            <Card ctype="card-secondary"></Card>
-          </div>
-        </Card>
         <Card ctype="card-primary">
           <div className="job-heading">
             <div>
@@ -97,9 +75,31 @@ export default function Home() {
             </tbody>
           </table>
         </Card>
+        <Button
+          btype="btn-primary"
+          bTitle="CreateJob"
+          btnImg={require("../../assets/addjob.png")}
+          btnImgSize={"25px"}
+        />
+        <Card ctype="card-primary">
+          <div className="selection">
+            <div>
+              <label>Job Name</label>
+              <TextBox type={"text"} placeholder="Enter Job name" />
+            </div>
+            <div>
+              <label>Select Printer</label>
+              <TextBox type={"text"} placeholder="" />
+            </div>
+            <div>
+              <label>Uploade Files</label>
+              <TextBox type={"text"} placeholder="" />
+            </div>
+          </div>
+        </Card>
       </div>
 
-      <div className="home-right">
+      <div className="addjobs-right">
         <Card ctype="card-primary">
           <img src={require("../../assets/bell.png")} alt="" />
           <img src={require("../../assets/profile-user.png")} alt="" />

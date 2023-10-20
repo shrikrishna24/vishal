@@ -2,7 +2,8 @@ import React from "react";
 import "./Button.css";
 
 export default function Buttons(props) {
-  let { type, name, value, handleClick, bTitle, btype, children } = props;
+  let { type, name, value, handleClick, bTitle, btype, btnImg, btnImgSize } =
+    props;
   if (!name) {
     name = "Input-box";
   }
@@ -25,7 +26,16 @@ export default function Buttons(props) {
       }
     >
       <button type={type} name={name} value={value} onClick={handleClick}>
-        {children}
+        {btnImg && (
+          <img
+            className="btn-Img"
+            src={btnImg}
+            alt=""
+            width={btnImgSize ? btnImgSize : "25px"}
+            height={btnImgSize ? btnImgSize : "25px"}
+          />
+        )}
+        {bTitle}
       </button>
     </div>
   );

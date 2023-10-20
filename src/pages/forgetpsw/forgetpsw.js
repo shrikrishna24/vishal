@@ -2,8 +2,19 @@ import React from "react";
 import "./forgetpsw.css";
 import TextBox from "../../components/textfield/textField";
 import Button from "../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Forgetpsw() {
+  const navigate = useNavigate();
+
+  const handleReturn = () => {
+    navigate("/login");
+  };
+
+  const handleReset = () => {
+    navigate("/resetpsw");
+  };
+
   return (
     <div className="forgetpsw-container">
       <div className="forgetpsw-content">
@@ -31,9 +42,11 @@ export default function Forgetpsw() {
             </label>
           </div>
 
-          <Button btype="primary" bTitle="forgetpsw">
-            <span>Continue</span>
-          </Button>
+          <Button
+            handleClick={handleReset}
+            btype="btn-primary"
+            bTitle="Continue"
+          />
 
           <div className="seprator">
             <div></div>
@@ -42,14 +55,13 @@ export default function Forgetpsw() {
           </div>
 
           <div className="forgetpsw-footer">
-            <Button btype="btn-secondary" bTitle="forgetpsw with Google">
-              <div className="enter-icon">
-                <img src={require("../../assets/enter.png")} alt="" />
-              </div>
-              <span>
-                <a href="/login">Return to Login</a>
-              </span>
-            </Button>
+            <Button
+              handleClick={handleReturn}
+              btype="btn-secondary"
+              bTitle="Return To Login"
+              btnImg={require("../../assets/enter.png")}
+              btnImgSize={"20px"}
+            />
           </div>
         </form>
       </div>

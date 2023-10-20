@@ -22,7 +22,7 @@
 
 .signup-head h1 {
   text-align: center;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-family: "Manrope", sans-serif;
 }
 
@@ -30,7 +30,7 @@
 .signup-fields {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 10px;
   font-family: "Manrope", sans-serif;
 }
 
@@ -71,6 +71,10 @@
   align-items: center;
   gap: 10px;
   margin-top: 1.5px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
 }
 
 /* seprator */
@@ -114,5 +118,5 @@
 
 .google-icon {
   position: absolute;
-  padding-left: 42px;
+  padding-left: 30px;
 }

@@ -2,8 +2,15 @@ import React from "react";
 import "./resetpsw.css";
 import TextBox from "../../components/textfield/textField";
 import Button from "../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Resetpsw() {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="resetpsw-container">
       <div className="resetpsw-content">
@@ -41,9 +48,11 @@ export default function Resetpsw() {
             </label>
           </div>
 
-          <Button btype="primary" bTitle="resetpsw">
-            <span>Continue</span>
-          </Button>
+          <Button
+            handleClick={handleContinue}
+            btype="btn-primary"
+            bTitle="Continue"
+          />
 
           <div className="seprator">
             <div></div>
@@ -52,14 +61,13 @@ export default function Resetpsw() {
           </div>
 
           <div className="resetpsw-footer">
-            <Button btype="btn-secondary" bTitle="resetpsw with Google">
-              <div className="enter-icon">
-                <img src={require("../../assets/enter.png")} alt="" />
-              </div>
-              <span>
-                <a href="/login">Return to Login</a>
-              </span>
-            </Button>
+            <Button
+              handleClick={handleContinue}
+              btype="btn-secondary"
+              bTitle="Return to Login"
+              btnImg={require("../../assets/enter.png")}
+              btnImgSize={"20px"}
+            />
           </div>
         </form>
       </div>

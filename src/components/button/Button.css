@@ -1,5 +1,9 @@
-.btn-primary button,
-.btn-secondary button {
+.btn-secondary button,
+.btn-primary button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
   width: 100%;
   background-color: var(--primary);
   color: var(--white);
@@ -13,17 +17,26 @@
   margin-top: 5px;
 }
 
+.btn-primary button {
+  background-color: var(--primary);
+}
+
 .btn-secondary button {
   background-color: transparent;
   color: var(--primary);
   border: 1px solid var(--primary);
-  position: relative;
 }
 
 .btn-primary button:hover,
 .btn-secondary button:hover {
   transform: scale(1.02);
 }
+
+/* .btn-Img {
+  position: absolute;
+  left: 7px;
+  top: 15px;
+} */
 
 @media screen and (max-width: 600px) {
   .btn-primary button,

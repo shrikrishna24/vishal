@@ -2,8 +2,15 @@ import React from "react";
 import "./signup.css";
 import TextBox from "../../components/textfield/textField";
 import Button from "../../components/button/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="signup-container">
       <div className="signup-content">
@@ -49,12 +56,17 @@ export default function Signup() {
             </label>
           </div>
 
-          <Button btype="primary" bTitle="signup">
-            <span>Sign Up</span>
-          </Button>
+          <Button
+            handleClick={handleRedirect}
+            btype="btn-primary"
+            bTitle="Sign up"
+          />
 
           <div className="alreadylogin">
-            Have an Account?<a href="/login">Log In</a>
+            Have an Account?
+            <Link to="/login" className="login-link">
+              Log In
+            </Link>
           </div>
 
           <div className="seprator">
@@ -64,12 +76,12 @@ export default function Signup() {
           </div>
 
           <div className="signup-footer">
-            <Button btype="btn-secondary" bTitle="signup with Google">
-              <div className="google-icon">
-                <img src={require("../../assets/google.png")} alt="" />
-              </div>
-              <span>Signup with Google</span>
-            </Button>
+            <Button
+              btype="btn-secondary"
+              bTitle="Signup with Google"
+              btnImg={require("../../assets/google.png")}
+              btnImgSize={"20px"}
+            />
             <div>
               <p>
                 By clicking “signup with Google/Email/SAML” above you

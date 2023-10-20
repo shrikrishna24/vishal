@@ -1,4 +1,4 @@
-.sidebar-container{
+.sidebar-container {
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,16 @@
   color: white;
 }
 
-.sidebar-navlinks>div{
+.sidebar-navlinks > div {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-logouts > div {
   padding-top: 25px;
   display: flex;
   flex-direction: column;

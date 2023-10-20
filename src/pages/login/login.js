@@ -2,8 +2,23 @@ import React from "react";
 import "./login.css";
 import TextBox from "../../components/textfield/textField";
 import Button from "../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/home");
+  };
+
+  const handleForget = () => {
+    navigate("/forgetpsw");
+  };
+
+  const handleSignup = () => {
+    navigate("/signup");
+  };
+
   return (
     <div className="login-container">
       <div className="login-content">
@@ -21,8 +36,8 @@ export default function Login() {
             <label>
               Email ID
               <TextBox type={"email"} placeholder="Enter your Email ID here" />
-              <p className="bottom-label">
-                <a href="/signup">Don't have account register now?</a>
+              <p onClick={handleSignup} className="bottom-label">
+                Don't have account register now?
               </p>
             </label>
           </div>
@@ -38,15 +53,17 @@ export default function Login() {
                 type={"password"}
                 placeholder="Enter your password here"
               />
-              <p className="bottom-label">
-                <a href="/forgetpsw">Forget Password?</a>
+              <p onClick={handleForget} className="bottom-label">
+                Forget Password?
               </p>
             </label>
           </div>
 
-          <Button btype="primary" bTitle="Login">
-            <span>Login</span>
-          </Button>
+          <Button
+            handleClick={handleLogin}
+            btype="btn-primary"
+            bTitle="Login"
+          />
 
           <div className="seprator">
             <div></div>
@@ -55,12 +72,12 @@ export default function Login() {
           </div>
 
           <div className="login-footer">
-            <Button btype="btn-secondary" bTitle="Login with Google">
-              <div className="google-icon">
-                <img src={require("../../assets/google.png")} alt="" />
-              </div>
-              <span>Login with Google</span>
-            </Button>
+            <Button
+              btype="btn-secondary"
+              bTitle="Login with Google"
+              btnImg={require("../../assets/google.png")}
+              btnImgSize={"20px"}
+            />
             <div>
               <p>
                 By clicking “Login with Google/Email/SAML” above you acknowledge
