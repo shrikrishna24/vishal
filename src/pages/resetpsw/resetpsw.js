@@ -50,7 +50,7 @@ export default function Resetpsw() {
 
           <Button
             handleClick={handleContinue}
-            btype="btn-primary"
+            btype="primary"
             bTitle="Continue"
           />
 
@@ -63,7 +63,7 @@ export default function Resetpsw() {
           <div className="resetpsw-footer">
             <Button
               handleClick={handleContinue}
-              btype="btn-secondary"
+              btype="secondary"
               bTitle="Return to Login"
               btnImg={require("../../assets/enter.png")}
               btnImgSize={"20px"}

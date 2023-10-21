@@ -59,11 +59,7 @@ export default function Login() {
             </label>
           </div>
 
-          <Button
-            handleClick={handleLogin}
-            btype="btn-primary"
-            bTitle="Login"
-          />
+          <Button handleClick={handleLogin} btype="primary" bTitle="Login" />
 
           <div className="seprator">
             <div></div>
@@ -73,7 +69,7 @@ export default function Login() {
 
           <div className="login-footer">
             <Button
-              btype="btn-secondary"
+              btype="secondary"
               bTitle="Login with Google"
               btnImg={require("../../assets/google.png")}
               btnImgSize={"20px"}

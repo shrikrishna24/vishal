@@ -42,11 +42,7 @@ export default function Forgetpsw() {
             </label>
           </div>
 
-          <Button
-            handleClick={handleReset}
-            btype="btn-primary"
-            bTitle="Continue"
-          />
+          <Button handleClick={handleReset} btype="primary" bTitle="Continue" />
 
           <div className="seprator">
             <div></div>
@@ -57,7 +53,7 @@ export default function Forgetpsw() {
           <div className="forgetpsw-footer">
             <Button
               handleClick={handleReturn}
-              btype="btn-secondary"
+              btype="secondary"
               bTitle="Return To Login"
               btnImg={require("../../assets/enter.png")}
               btnImgSize={"20px"}

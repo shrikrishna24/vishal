@@ -76,7 +76,7 @@ export default function Addjobs() {
           </table>
         </Card>
         <Button
-          btype="btn-primary"
+          btype="secondary"
           bTitle="CreateJob"
           btnImg={require("../../assets/addjob.png")}
           btnImgSize={"25px"}

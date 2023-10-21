@@ -58,7 +58,7 @@ export default function Signup() {
 
           <Button
             handleClick={handleRedirect}
-            btype="btn-primary"
+            btype="primary"
             bTitle="Sign up"
           />
 
@@ -77,7 +77,7 @@ export default function Signup() {
 
           <div className="signup-footer">
             <Button
-              btype="btn-secondary"
+              btype="secondary"
               bTitle="Signup with Google"
               btnImg={require("../../assets/google.png")}
               btnImgSize={"20px"}

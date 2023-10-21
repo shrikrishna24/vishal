@@ -17,14 +17,15 @@
   margin-top: 5px;
 }
 
-.btn-primary button {
-  background-color: var(--primary);
-}
-
 .btn-secondary button {
   background-color: transparent;
   color: var(--primary);
   border: 1px solid var(--primary);
+}
+
+.btn-primary button {
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 .btn-primary button:hover,
