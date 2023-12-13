@@ -1,23 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import TextBox from "../../components/textfield/textField";
 import Button from "../../components/button/Button";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate("/home");
-  };
-
-  const handleForget = () => {
-    navigate("/forgetpsw");
-  };
-
-  const handleSignup = () => {
-    navigate("/signup");
-  };
+  async function loginUser(ev) {
+    ev.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5173/login", {
+        email,
+        password,
+      });
+      // Assuming your server sends back a token upon successful login
+      if (response.data.token) {
+        // Store the token in localStorage or a global state management system
+        localStorage.setItem("token", response.data.token);
+        // Redirect to the home page or dashboard
+        navigate("/home");
+      } else {
+        alert("Login failed. Invalid credentials.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Login failed. There was an error.");
+    }
+  }
 
   return (
     <div className="login-container">
@@ -26,7 +39,7 @@ export default function Login() {
           <h1>Login</h1>
         </div>
 
-        <form className="login-fields">
+        <form className="login-fields" onSubmit={loginUser}>
           <div>
             <img
               className="input-icons"
@@ -35,10 +48,15 @@ export default function Login() {
             />
             <label>
               Email ID
-              <TextBox type={"email"} placeholder="Enter your Email ID here" />
-              <p onClick={handleSignup} className="bottom-label">
-                Don't have account register now?
-              </p>
+              <TextBox
+                type={"email"}
+                placeholder="Enter your Email ID here"
+                value={email}
+                handleChange={(value) => setEmail(value)}
+              />
+              <Link to={"/signup"}>
+                <p className="bottom-label">Don't have account register now?</p>
+              </Link>
             </label>
           </div>
           <div>
@@ -51,15 +69,21 @@ export default function Login() {
               Password
               <TextBox
                 type={"password"}
+                handleChange={(value) => setPassword(value)}
                 placeholder="Enter your password here"
+                value={password}
               />
-              <p onClick={handleForget} className="bottom-label">
-                Forget Password?
-              </p>
+              <p className="bottom-label">Forget Password?</p>
             </label>
           </div>
 
-          <Button handleClick={handleLogin} btype="primary" bTitle="Login" />
+          <Button
+            btype="primary"
+            type="submit"
+            value="login"
+            bTitle="Login"
+            onClick={loginUser}
+          />
 
           <div className="seprator">
             <div></div>

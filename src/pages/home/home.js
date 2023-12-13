@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import Card from "../../components/card/card";
 import TextField from "../../components/textfield/textField";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Home() {
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    async function fetchUserData() {
+      try {
+        const response = await axios.get("http://localhost:5173/profile");
+        if (response.data) {
+          setUsername(response.data.name);
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    }
+
+    fetchUserData();
+  }, []);
+
   return (
     <div className="home-container">
       <div className="home-left">
@@ -17,7 +36,7 @@ export default function Home() {
           <TextField name="Search" placeholder="Search" type="text" />
         </div>
         <div className="home-heading">
-          <h3>Hey John, Welcome to Webprint</h3>
+          <h3>Hey {username}, Welcome to Webprint</h3>
         </div>
 
         <div className="data-card">
@@ -47,7 +66,9 @@ export default function Home() {
               <h4>Recent Jobs</h4>
             </div>
             <div>
-              <h4>View all</h4>
+              <Link to={"/addjobs"}>
+                <h4>View all</h4>
+              </Link>
             </div>
           </div>
           <table className="job-table">
@@ -59,20 +80,6 @@ export default function Home() {
               <th>Time required</th>
             </thead>
             <tbody>
-              <tr>
-                <td>Job</td>
-                <td>Filename</td>
-                <td>ID</td>
-                <td>10gm</td>
-                <td>2hrs</td>
-              </tr>
-              <tr>
-                <td>Job</td>
-                <td>Filename</td>
-                <td>ID</td>
-                <td>10gm</td>
-                <td>2hrs</td>
-              </tr>
               <tr>
                 <td>Job</td>
                 <td>Filename</td>

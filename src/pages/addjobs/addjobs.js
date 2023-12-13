@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./addjobs.css";
 import Card from "../../components/card/card";
 import TextField from "../../components/textfield/textField";
@@ -6,6 +6,12 @@ import Button from "../../components/button/Button";
 import TextBox from "../../components/textfield/textField";
 
 export default function Addjobs() {
+  const [showSelectionBox, setShowSelectionBox] = useState(false);
+
+  const toggleSelectionBox = () => {
+    setShowSelectionBox(!showSelectionBox);
+  };
+
   return (
     <div className="addjobs-container">
       <div className="addjobs-left">
@@ -58,20 +64,6 @@ export default function Addjobs() {
                 <td>10gm</td>
                 <td>2hrs</td>
               </tr>
-              <tr>
-                <td>Job</td>
-                <td>Filename</td>
-                <td>ID</td>
-                <td>10gm</td>
-                <td>2hrs</td>
-              </tr>
-              <tr>
-                <td>Job</td>
-                <td>Filename</td>
-                <td>ID</td>
-                <td>10gm</td>
-                <td>2hrs</td>
-              </tr>
             </tbody>
           </table>
         </Card>
@@ -80,23 +72,26 @@ export default function Addjobs() {
           bTitle="CreateJob"
           btnImg={require("../../assets/addjob.png")}
           btnImgSize={"25px"}
+          handleClick={toggleSelectionBox}
         />
-        <Card ctype="card-primary">
-          <div className="selection">
-            <div>
-              <label>Job Name</label>
-              <TextBox type={"text"} placeholder="Enter Job name" />
+        {showSelectionBox && (
+          <Card ctype="card-primary">
+            <div className="selection">
+              <div>
+                <label>Job Name</label>
+                <TextBox type={"text"} placeholder="Enter Job name" />
+              </div>
+              <div>
+                <label>Select Printer</label>
+                <TextBox type={"text"} placeholder="" />
+              </div>
+              <div>
+                <label>Uploade Files</label>
+                <TextBox type={"text"} placeholder="" />
+              </div>
             </div>
-            <div>
-              <label>Select Printer</label>
-              <TextBox type={"text"} placeholder="" />
-            </div>
-            <div>
-              <label>Uploade Files</label>
-              <TextBox type={"text"} placeholder="" />
-            </div>
-          </div>
-        </Card>
+          </Card>
+        )}
       </div>
 
       <div className="addjobs-right">

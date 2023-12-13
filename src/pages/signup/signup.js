@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signup.css";
 import TextBox from "../../components/textfield/textField";
 import Button from "../../components/button/Button";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Signup() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleRedirect = () => {
-    navigate("/login");
-  };
+  async function registerUser(ev) {
+    ev.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5173/signup", {
+        email,
+        name,
+        password,
+      });
+      alert("Registration Successful. Now you can log in.");
+      if (response.data) {
+        console.log(response.data);
+        navigate("/home");
+      }
+    } catch (error) {
+      alert(
+        "Registration failed. The email is already in use or there was an error."
+      );
+      console.error("Registration error:", error);
+    }
+  }
 
   return (
     <div className="signup-container">
@@ -17,8 +38,7 @@ export default function Signup() {
         <div className="signup-head">
           <h1>Sign Up</h1>
         </div>
-
-        <form className="signup-fields">
+        <form className="signup-fields" onSubmit={registerUser}>
           <div>
             <img
               className="input-icons"
@@ -27,7 +47,13 @@ export default function Signup() {
             />
             <label>
               Email ID
-              <TextBox type={"email"} placeholder="Enter your Email ID here" />
+              <TextBox
+                inputName="email"
+                value={email}
+                handleChange={(e) => setEmail(e)}
+                type={"email"}
+                placeholder="Enter your Email ID here"
+              />
             </label>
           </div>
           <div>
@@ -38,7 +64,13 @@ export default function Signup() {
             />
             <label>
               Username
-              <TextBox type={"text"} placeholder="Enter your Username here" />
+              <TextBox
+                inputName="name"
+                value={name}
+                handleChange={(e) => setName(e)}
+                type={"text"}
+                placeholder="Enter your Username here"
+              />
             </label>
           </div>
           <div>
@@ -50,16 +82,20 @@ export default function Signup() {
             <label>
               Password
               <TextBox
+                inputName="password"
+                value={password}
+                handleChange={(e) => setPassword(e)}
                 type={"password"}
                 placeholder="Enter your password here"
               />
             </label>
           </div>
-
           <Button
-            handleClick={handleRedirect}
+            type="submit"
+            value="register"
             btype="primary"
             bTitle="Sign up"
+            onClick={registerUser}
           />
 
           <div className="alreadylogin">
